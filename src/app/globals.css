@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: var(--font-hind), sans-serif;
+    @apply antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-oswald), sans-serif;
+  }
+
+  body {
+    @apply bg-slate-900;
+  }
+}
+
+@layer components {
+  /* Trading Section Colors */
+  .trading-primary {
+    @apply bg-emerald-600 hover:bg-emerald-700 text-white;
+  }
+
+  .trading-secondary {
+    @apply bg-emerald-900/50 text-emerald-200 border-emerald-700/50;
+  }
+
+  .trading-accent {
+    @apply text-emerald-400 hover:text-emerald-300;
+  }
+
+  /* Learning Section Colors */
+  .learn-primary {
+    @apply bg-indigo-600 hover:bg-indigo-700 text-white;
+  }
+
+  .learn-secondary {
+    @apply bg-indigo-900/50 text-indigo-200 border-indigo-700/50;
+  }
+
+  .learn-accent {
+    @apply text-indigo-400 hover:text-indigo-300;
+  }
+
+  /* Portfolio Section Colors */
+  .portfolio-primary {
+    @apply bg-purple-600 hover:bg-purple-700 text-white;
+  }
+
+  .portfolio-secondary {
+    @apply bg-purple-900/50 text-purple-200 border-purple-700/50;
+  }
+
+  .portfolio-accent {
+    @apply text-purple-400 hover:text-purple-300;
+  }
+
+  /* Navigation Components */
+  .nav-section {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  }
+
+  .nav-link {
+    @apply text-gray-200 hover:text-white transition-colors duration-200 
+           hover:underline decoration-2 underline-offset-4;
+  }
+
+  .nav-link-active {
+    @apply font-semibold;
+  }
+
+  /* Button Components */
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 
+           shadow-sm hover:shadow-md active:shadow-inner
+           transform hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  /* Card Components */
+  .card {
+    @apply bg-slate-800 rounded-xl 
+           shadow-lg hover:shadow-xl
+           border border-slate-700/50
+           transition-all duration-200 ease-in-out
+           text-white p-6;
+  }
+
+  /* News Ticker Animation */
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  /* High Contrast Focus Styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-offset-2 ring-offset-slate-900;
+  }
+
+  /* Section-specific ring colors */
+  .trading-focus {
+    @apply ring-emerald-500;
+  }
+
+  .learn-focus {
+    @apply ring-indigo-500;
+  }
+
+  .portfolio-focus {
+    @apply ring-purple-500;
+  }
+
+  /* Interactive Elements */
+  .interactive-icon {
+    @apply hover:scale-110 active:scale-95
+           transition-transform duration-200
+           cursor-pointer;
+  }
+
+  /* Section Headers */
+  .section-header {
+    @apply text-2xl font-bold mb-6;
+  }
+
+  .trading-header {
+    @apply text-emerald-400;
+  }
+
+  .learn-header {
+    @apply text-indigo-400;
+  }
+
+  .portfolio-header {
+    @apply text-purple-400;
+  }
+}
+
+/* Accessibility Helpers */
+.sr-only {
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+}
+
+/* Smooth Transitions */
+.transition-smooth {
+  @apply transition-all duration-300 ease-in-out;
+}

@@ -1,0 +1,5 @@
+# Run synchronization daily at 2 AM
+0 2 * * * /home/project/scripts/sync-servers.sh >> /var/log/sync/cron.log 2>&1
+
+# Verify sync every 6 hours
+0 */6 * * * /home/project/scripts/verify-sync.sh >> /var/log/sync/cron.log 2>&1

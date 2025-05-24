@@ -1,0 +1,19 @@
+@layer components {
+  .hyperlink {
+    @apply text-indigo-400 hover:text-indigo-300 
+           underline decoration-2 underline-offset-2
+           transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
+           focus:ring-offset-slate-900;
+  }
+
+  .hyperlink-active {
+    @apply text-indigo-300 font-medium;
+  }
+
+  .hyperlink-subtle {
+    @apply text-gray-300 hover:text-indigo-400
+           no-underline hover:underline decoration-2 underline-offset-2
+           transition-colors duration-200;
+  }
+}

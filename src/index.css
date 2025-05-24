@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 50s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@layer base {
+  html {
+    font-family: 'Hind', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+  }
+
+  body {
+    @apply bg-slate-900;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-slate-800 rounded-xl 
+           shadow-lg hover:shadow-xl
+           border border-slate-700/50
+           transition-all duration-200 ease-in-out
+           text-white p-6;
+  }
+
+  .nav-link {
+    @apply text-gray-200 hover:text-white transition-colors duration-200 
+           hover:underline decoration-2 underline-offset-4;
+  }
+
+  .nav-link-active {
+    @apply font-semibold;
+  }
+}
